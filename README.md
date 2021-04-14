@@ -1,9 +1,8 @@
-python-ml-structure
-==============================
+# VIP-ALIEN analytics project template
 
-a template for python ml dev
+A template for the projects of the analytics module in VIP-ALIEN Consortium
 
-Project Organization
+## Project Organization
 ------------
 
     ├── LICENSE
@@ -17,13 +16,13 @@ Project Organization
     │   ├── processed      <- The final, canonical data sets for modeling.
     │   └── raw            <- The original, immutable data dump.
     │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
+    ├── docs               <- Documentation of the project design, engineering method, etc...
     │
     ├── models             <- Trained and serialized models, model predictions, or model summaries
     │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
+    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering)
+    │                         and a short `-` delimited description, e.g.
+    │                         `1.0-initial-data-exploration`.
     │
     ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
     │
@@ -45,14 +44,23 @@ Project Organization
     │   │
     │   ├── models         <- Scripts to train models and then use trained models to make
     │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
+    │   │   ├── base_models.py         <- Abtract classes that implemented models should inherit from. 
     │   │
     │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
+    │       └── visualizer.py
+    │   │
+    │   └── api  <- Scripts to connect to frontend and send interactive plots 
+    │       └── endpoints.py <- Flask app defining endpoints to which frontend could make requests
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
 
 
 --------
 
+## Setup
+
+```
+conda create -n vip-env python=3.7
+conda activate vip-env
+pip install -r requirements.txt
+```
